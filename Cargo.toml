@@ -1,0 +1,147 @@
+[dependencies.url]
+version = "2.5"
+
+[package]
+name = "did_mmap_cache"
+version = "2.2.0"
+edition = "2021"
+license = "MIT"
+authors = ["ybzeek <ybzeek@users.noreply.github.com>"]
+description = "Standalone mmap-based DID to pubkey cache tooling."
+
+[lib]
+name = "did_mmap_cache"
+path = "src/lib.rs"
+
+[dependencies]
+
+memmap2 = "0.7"
+tempfile = "3.10"
+sha2 = { version = "0.10", features = ["asm"] }
+dashmap = "6.1.0"
+fxhash = "0.2"
+k256 = { version = "0.13", features = ["ecdsa", "arithmetic", "precomputed-tables"] }
+p256 = { version = "0.13", features = ["ecdsa"] }
+libipld = { version = "0.16", features = ["dag-cbor", "derive"] }
+bs58 = "0.5"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sonic-rs = "0.3.16"
+anyhow = "1.0"
+clap = { version = "4.5", features = ["derive"] }
+reqwest = { version = "0.11", default-features = false, features = ["blocking", "json", "rustls-tls"] }
+tokio = { version = "1.36", features = ["full"] }
+tokio-tungstenite = { version = "0.21", features = ["rustls-tls-native-roots"] }
+tokio-stream = "0.1"
+futures = "0.3"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+crossbeam-channel = "0.5"
+tungstenite = { version = "0.21", features = ["rustls-tls-native-roots"] }
+rustls = "0.22"
+bytes = "1.6"
+rand = "0.8"
+bincode = "1.3"
+base64 = "0.21"
+chrono = { version = "0.4.43", features = ["serde"] }
+hex = "0.4.3"
+num_cpus = "1.17.0"
+serde_bytes = "0.11.19"
+ctrlc = "3.4"
+zstd = "0.13"
+fastbloom = "0.6"
+native-tls = "0.2"
+blake3 = "1.5"
+
+
+[dependencies.zerocopy]
+version = "0.7.35"
+features = ["derive"]
+
+[dependencies.zerocopy-derive]
+version = "0.7.35"
+
+[dependencies.multibase]
+version = "0.9"
+
+
+
+[[bin]]
+name = "sovereign_aggregator"
+path = "src/bin/sovereign_aggregator.rs"
+
+[[bin]]
+name = "sovereign_ingester"
+path = "src/bin/sovereign_ingester.rs"
+
+[[bin]]
+name = "firehose_tap"
+path = "src/bin/firehose_tap.rs"
+
+[[bin]]
+name = "live_firehose"
+path = "src/bin/live_firehose.rs"
+
+[[bin]]
+name = "download_plc"
+path = "src/bin/download_plc.rs"
+
+[[bin]]
+name = "build_cache"
+path = "src/bin/build_cache.rs"
+
+[[bin]]
+name = "local_file_processor"
+path = "src/bin/local_file_processor.rs"
+
+[[bin]]
+name = "ingest_plc_updates"
+path = "src/bin/ingest_plc_updates.rs"
+
+[[bin]]
+name = "sovereign_relay"
+path = "src/bin/sovereign_relay.rs"
+
+[[bin]]
+name = "sovereign_client"
+path = "src/bin/sovereign_client.rs"
+
+[[bin]]
+name = "verify_stored_data"
+path = "src/bin/research/verify_stored_data.rs"
+
+[[bin]]
+name = "verify_archive_integrity"
+path = "src/bin/research/verify_archive_integrity.rs"
+
+[[bin]]
+name = "generate_proof"
+path = "src/bin/research/generate_proof.rs"
+
+[[bin]]
+name = "integrated_stress_test"
+path = "src/bin/research/integrated_stress_test.rs"
+
+[[bin]]
+name = "audit_efficiency"
+path = "src/bin/research/audit_efficiency.rs"
+
+[[bin]]
+name = "bench_clustering"
+path = "src/bin/research/bench_clustering.rs"
+
+[[bin]]
+name = "bench_decompress"
+path = "src/bin/research/bench_decompress.rs"
+
+[[bin]]
+name = "bench_egress"
+path = "src/bin/research/bench_egress.rs"
+
+[[bin]]
+name = "bench_lookup"
+path = "src/bin/research/bench_lookup.rs"
+
+
+[profile.release]
+debug = true

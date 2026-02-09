@@ -1,0 +1,35 @@
+# Rust
+/target/
+**/*.rs.bk
+
+# Large Data Files
+*.jsonl
+*.jsonl.preprocessed
+*.bin
+pds_list.*
+private_hosts.txt
+atproto_audit_data/
+perf.data
+perf.data.old
+
+# Torrent Files
+# atomic_cache.torrent (Distribution for audit)
+atomic_cache.torrent
+# !atomic_cache.torrent
+
+# Logs and Metrics
+*.log
+*.pdf
+
+# Local Identity & Backups
+cursor.txt
+.copilot/
+docs/GOD_MODE_IDEAS.md
+old_backup/
+archive_dir/
+v2_archive/
+sovereign_archive/
+pds_cursors.json
+pds_blocked.json
+mesh_map.json
+pitch_email.txt
